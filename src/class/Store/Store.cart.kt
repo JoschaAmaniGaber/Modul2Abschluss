@@ -18,17 +18,17 @@ fun Store.pay() {
     var productPriceTotal: Double = 0.0
     var totalCost: Double = 0.0
     var anzahlProduct: Int = 0
-    cart.forEach {
-        anzahlProduct = it.value
+    cart.forEach { itCart ->
+        anzahlProduct = itCart.value
         if (anzahlProduct > 0) {
-            var checkProductNameToPrice: String = it.key
-            products.forEach {
+            var checkProductNameToPrice: String = itCart.key
+            productsStoreList.forEach {
                 if (it.name == checkProductNameToPrice) {
                     priceProduct = it.price
                 }
             }
             productPriceTotal = priceProduct * anzahlProduct
-            println("Der Gesamt Preis für ${it.value} Stück von ${it.key} liegt bei $productPriceTotal")
+            println("Der Gesamt Preis für ${itCart.value} Stück von ${itCart.key} liegt bei $productPriceTotal")
             totalCost += productPriceTotal
             println("Die gesamt Kosten OverAll betragen $totalCost")
             println("Möchtest du bezahlen? >check out< & $enter")

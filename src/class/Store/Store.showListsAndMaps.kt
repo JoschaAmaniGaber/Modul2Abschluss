@@ -10,7 +10,7 @@ fun Store.showAccounts() {
 fun Store.showProducts() {
     println("* * * Alle Produkte anzeigen * * *")
     i = 0
-    products.forEach {
+    productsStoreList.forEach {
         i ++
         if (it.quantity > 0) {
             println("$i -> $it")
