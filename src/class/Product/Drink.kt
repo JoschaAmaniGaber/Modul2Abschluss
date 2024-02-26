@@ -13,6 +13,4 @@ open class Drink(
     quantity: Int,
     typ: String = TypAndGroup.Trinken.typ,
     group: String
-):Product(name, price, quantity, typ, group) {
-
-}
+):Product(name, price, quantity, typ, group)

@@ -12,7 +12,7 @@ class HotDrink(
     name: String,
     price: Double,
     quantity: Int,
-    var mitHafer: Boolean = false,
+    private var mitHafer: Boolean = false,
     typ: String = TypAndGroup.HotDrink.typ,
     group: String = TypAndGroup.HotDrink.group,
 ): Drink(name, price, quantity, typ, group) {
@@ -26,8 +26,10 @@ class HotDrink(
     }
 
     fun haferErsatz() {
+
         mitHafer = true
         price += 0.5
         println("Der Preis wurde um 50 Cent erhöht, da du Hafermilch möchtest")
+
     }
 }
