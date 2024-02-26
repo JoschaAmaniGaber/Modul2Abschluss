@@ -44,31 +44,14 @@ fun Store.homeScreenChoice() {
     when (readln()) {
 
         //  Accounts sehen
-        "1" -> // TODO: showAccounts()
-
+        "1" -> showAccounts()
 
         // Karte anzeigen & zurück zum HomeScreen
-        "2" -> {
-            // TODO: showProducts()
-        }
+        "2" -> showProducts()
 
         // Sign Up
-        "3" -> {
-            if (accountWithThisName) {
-                println("Du möchtest dich mit einem anderen Namen registrieren, Dann gib jetzt deinen Namen ein. Hier sind die schon vergebenen Namen")
-                accountNames.forEach { println("$it ist schon weg") }
-                enterName()
-                if (accountsMap.keys.contains(userName)) {
-                    println("Möchtest du direkt weiter zum Login $enter")
-                    if (readln() == "") {
-                        // TODO: logInUser()
-                    }
-                }
-            }
-            if (!currentUser.loggedIn) {
-                // TODO: signUp()
-            } else println("Du bist schon eingeloggt")
-        }
+        "3" -> signUp()
+
 
         // Log In
         "4" -> {
@@ -128,6 +111,24 @@ fun Store.homeScreenChoice() {
         }
     }
 }
+
+private fun Store.signUp() {
+    if (accountWithThisName) {
+        println("Du möchtest dich mit einem anderen Namen registrieren, Dann gib jetzt deinen Namen ein. Hier sind die schon vergebenen Namen")
+        accountNames.forEach { println("$it ist schon weg") }
+        enterName()
+        if (accountsMap.keys.contains(userName)) {
+            println("Möchtest du direkt weiter zum Login $enter")
+            if (readln() == "") {
+                // TODO: logInUser()
+            }
+        }
+    }
+    if (!currentUser.loggedIn) {
+        // TODO: signUp()
+    } else println("Du bist schon eingeloggt")
+}
+
 fun Store.wrongAnswer() {
     println("Ungültige Eingabe")
     println("Probiers nochmal")

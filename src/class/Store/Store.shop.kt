@@ -1,7 +1,7 @@
 /**
  *
  */
-fun Store.startshop() {
+fun  Store.startshop() {
 
     initDefaultData()
     load()
