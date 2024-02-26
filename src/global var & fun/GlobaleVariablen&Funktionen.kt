@@ -62,14 +62,11 @@ fun randomRating(): Int {
 /**
  * Diese Funktion erstellt eine zufällige Anzahl (1-10) an Bewertungen
  */
-fun generateRatings(): Double {
+fun generateRatings(): MutableList<Int> {
     val ratings: MutableList<Int> = mutableListOf<Int>()
     repeat((1..10).random()) {
         ratings.add(randomRating())
     }
 
-    // Aufgabe 3c
-    average = ratings.average()
-
-    return average
+    return ratings
 }
