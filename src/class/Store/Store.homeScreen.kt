@@ -76,21 +76,10 @@ fun Store.homeScreenChoice() {
         }
 
         // Log Out Funktion
-        "000" -> {
-            if (currentUser.loggedIn) {
-                currentUser.loggedIn = false
-            } else println("Du bist noch nicht eingeloggt")
-            println("Möchtest du das Programm Beenden, dann gib >>> stop <<< ein & $enter")
-            if (readln() == "stop") end = true
-            // TODO: showNewPartMedium()
-        }
+        "000" -> logOut()
 
-        // LogInAdmin
-        "admin" -> {
-            if (currentUser.isAdmin && currentUser.loggedIn) {
-                adminShop()
-            } else println("Du bist kein Admin oder nicht eingeloggt")
-        }
+        // Admin Shop
+        "admin" -> checkAdminShop()
 
         // Falsche Eingabe Funktion
         else -> {
@@ -100,7 +89,21 @@ fun Store.homeScreenChoice() {
     }
 }
 
-private fun Store.logInCheck() {
+private fun Store.checkAdminShop() {
+    if (currentUser.isAdmin && currentUser.loggedIn) {
+        adminShop()
+    } else println("Du bist kein Admin oder nicht eingeloggt")
+}
+
+fun Store.logOut() {
+    if (currentUser.loggedIn) {
+        currentUser.loggedIn = false
+    } else println("Du bist noch nicht eingeloggt")
+    println("Möchtest du das Programm Beenden, dann gib >>> stop <<< ein & $enter")
+    if (readln() == "stop") end = true
+}
+
+fun Store.logInCheck() {
     if (!currentUser.loggedIn) {
         logInUser()
     } else println("Du bist schon eingeloggt")

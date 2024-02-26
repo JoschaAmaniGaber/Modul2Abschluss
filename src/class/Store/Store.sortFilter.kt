@@ -117,6 +117,7 @@ fun Store.listForEach(list: MutableSet<String>) {
 }
 
 fun Store.whichTyp(list: MutableList<Product>) {
+
     i = 0
     println("Nach welchem Typ möchtest du filtern?")
 
