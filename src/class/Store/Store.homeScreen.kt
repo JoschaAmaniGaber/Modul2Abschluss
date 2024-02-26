@@ -50,35 +50,23 @@ fun Store.homeScreenChoice() {
         "2" -> showProducts()
 
         // Sign Up
-        "3" -> signUp()
-
+        "3" -> signUpCheck()
 
         // Log In
-        "4" -> {
-            if (!currentUser.loggedIn) {
-                // TODO: logInUser()
-            } else println("Du bist schon eingeloggt")
-        }
+        "4" -> logInCheck()
 
         // Produkte kaufen
-        "5" -> {
-            // TODO: addToCart()
-        }
+        "5" -> addToCart()
 
         // Warenkorb einsehen
-        "6" -> {
-            // TODO: seeCart()
-        }
+        "6" -> showCartAndPay()
 
         // Produkte sortieren
-        "7" -> {
-            // TODO: sort()
-        }
+        "7" -> sort()
 
         // Produkte Filtern
-        "8" -> {
-            // TODO: filter()
-        }
+        "8" -> filter()
+
 
         // Profil Einsehen Funktion
         "9" -> {
@@ -112,7 +100,13 @@ fun Store.homeScreenChoice() {
     }
 }
 
-private fun Store.signUp() {
+private fun Store.logInCheck() {
+    if (!currentUser.loggedIn) {
+        logInUser()
+    } else println("Du bist schon eingeloggt")
+}
+
+fun Store.signUpCheck() {
     if (accountWithThisName) {
         println("Du möchtest dich mit einem anderen Namen registrieren, Dann gib jetzt deinen Namen ein. Hier sind die schon vergebenen Namen")
         accountNames.forEach { println("$it ist schon weg") }
@@ -125,7 +119,7 @@ private fun Store.signUp() {
         }
     }
     if (!currentUser.loggedIn) {
-        // TODO: signUp()
+        signUp()
     } else println("Du bist schon eingeloggt")
 }
 
