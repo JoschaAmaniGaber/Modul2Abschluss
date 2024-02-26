@@ -38,6 +38,7 @@ fun Store.homeScreen() {
         stringNumber("admin")
         println("um in den ADMIN SHOP zu kommen")
     }
+    homeScreenChoice()
 }
 
 fun Store.homeScreenChoice() {
