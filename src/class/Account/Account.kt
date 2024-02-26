@@ -13,8 +13,8 @@ open class Account(
     constructor(name: String, age: Int): this(name, "", age, false)
 
     /**
-     * Sobald die class Account aufgerufen wird, wird geprüft, ob der Eingegebene Name schon vorhanden ist.
-     * Ist dies nicht der Fall, wird der Name zur Liste hinzugefügt und der Boolean [addToMapBool] wird auf true gesetzt
+     * Sobald die class Account aufgerufen wird, wird geprüft, ob der eingegebene Name schon vorhanden ist.
+     * Ist dies nicht der Fall, wird der Name zur Liste hinzugefügt und der Boolean wird auf true gesetzt
      */
     init {
 
