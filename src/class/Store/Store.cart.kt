@@ -51,14 +51,14 @@ fun Store.addToCart() {
         showProducts()
         println("Wähle eine der vorangegangenen Zahlen & $enter")
         var nr: Int = -1
-        while ((nr !in 0..products.size)) {
+        while ((nr !in 0..productsStoreList.size)) {
             try {
-                nr = readln().toInt()-1
+                nr = readln().toInt()
             } catch (e: NumberFormatException) {
                 println("Fehler: $e")
                 println("Eingabe ist keine Zahl")
             }
-            if (nr !in 0..products.size) println("Bitte gib nächstes mal eine ganze Zahl zwischen 1 und ${products.size} ein")
+            if (nr !in 0..productsStoreList.size) println("Bitte gib nächstes mal eine ganze Zahl zwischen 1 und ${productsStoreList.size} ein")
         }
         product = productsStoreList[nr - 1]
         productName = product.name
@@ -69,7 +69,7 @@ fun Store.addToCart() {
             wrongAnswer()
             addToCart()
         }
-        println("Wie viele möchtest du in deinen Einkaufswagen tun?")
+        println("Wie viele $productName möchtest du in deinen Einkaufswagen tun?")
         var quantityInCart: Int? = cart[productName]
         var anzahl: Int = 0
         try {
