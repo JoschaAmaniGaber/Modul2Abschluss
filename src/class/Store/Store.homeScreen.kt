@@ -118,7 +118,7 @@ fun Store.signUpCheck() {
         if (accountsMap.keys.contains(userName)) {
             println("Möchtest du direkt weiter zum Login $enter")
             if (readln() == "") {
-                // TODO: logInUser()
+                logInUser()
             }
         }
     }
