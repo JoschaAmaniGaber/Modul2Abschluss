@@ -53,7 +53,7 @@ fun Store.addToCart() {
         var nr: Int = -1
         while ((nr !in 0..products.size)) {
             try {
-                nr = readln().toInt()
+                nr = readln().toInt()-1
             } catch (e: NumberFormatException) {
                 println("Fehler: $e")
                 println("Eingabe ist keine Zahl")
