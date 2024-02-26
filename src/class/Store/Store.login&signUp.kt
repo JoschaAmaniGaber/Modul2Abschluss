@@ -25,6 +25,8 @@ fun Store.logInUser() {
         currentUser.loggedIn = true
         println("Du wurdest erfolgreich eingeloggt")
         emptyCartInit()
+        storeProducts()
+
     } else {
         println("Falsches Passwort! Erneut versuchen? $enter")
         if (readln() == "") {
